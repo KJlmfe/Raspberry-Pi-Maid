@@ -41,7 +41,7 @@ class Maid{
             if(strpos($tweet, "//") != FALSE) {
                 $tweet = substr($tweet, 0, strpos($tweet, "//")); //对于转发的微博 只获取主人的内容
             }
-            $id = $w['id']; //获取微博ID
+            $id = (string)$w['id']; //获取微博ID
             if(!$this->is_new_cmd($id)){ //避免重复执行主人的命令
                 continue;
             } 
